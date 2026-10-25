@@ -325,6 +325,16 @@ section{position:relative;padding-block:110px}
 .warn{padding:24px 26px;background:rgba(195,48,31,.12);box-shadow:inset 0 0 0 1px rgba(195,48,31,.6)}
 .warn h4{color:#ffb7aa}
 .warn p{margin:8px 0 0;font-size:14.5px}
+.official{margin-top:40px;display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;padding:22px 26px;background:linear-gradient(90deg,rgba(85,194,166,.14),rgba(85,194,166,.04));box-shadow:inset 0 0 0 1px rgba(85,194,166,.6)}
+.official .shield{width:52px;height:52px}
+.official h4{font-family:var(--f-head);font-weight:900;font-size:19px;color:#a8f0dc}
+.official p{margin:4px 0 0;font-size:14.5px;color:var(--bone)}
+.official .addr{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.official code{font-size:17px;padding:6px 12px;background:rgba(0,0,0,.4);color:#a8f0dc;user-select:all}
+.copy{all:unset;cursor:pointer;font-size:13px;padding:6px 12px;box-shadow:inset 0 0 0 1px rgba(85,194,166,.6);color:#a8f0dc}
+.copy:focus-visible{outline:2px solid #a8f0dc;outline-offset:2px}
+@media (max-width:760px){.official{grid-template-columns:1fr;text-align:left}}
+@media (max-width:560px){.store-cta .btn{white-space:normal;height:auto;min-height:60px;padding:10px 20px;text-align:center;font-size:18px}}
 .store-cta{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:36px}
 @media (max-width:760px){.store-foot{grid-template-columns:1fr}}
 
@@ -640,10 +650,16 @@ footer .bot{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,2
       <div class="pack"><div class="tier">CONQUEROR</div><div class="ntd">NT$5,000</div><div class="cp metal">71,000<small>天石</small></div><div class="base">基本 55,000・加送 16,000</div><ul><li>龍珠 ×20</li><li>+6 赤鍊石 ×2</li><li>頂級玄龜寶石 ×1</li><li>5 級錢袋 ×1</li></ul><div class="bonus"><span>加送</span><b>+29%</b></div></div>
     </div>
     <div class="store-foot">
-      <div class="panel howto"><h4>儲值流程</h4><ol><li>點「購買天石」選擇金額付款。</li><li>到 Discord 私訊 GM：角色名稱＋付款截圖。</li><li>GM 確認後發放天石和禮包。</li></ol></div>
-      <div class="warn"><h4>請勿私下買賣天石</h4><p>私下交易沒有任何保障，被騙或對方收錢不給，GM 都無法處理。查到私下買賣天石、帳號或遊戲幣換現金，相關帳號一律停權。</p></div>
+      <div class="panel howto"><h4>儲值流程</h4><ol><li>點下方「購買天石」，進入<b>官方儲值 Discord</b>。</li><li>在官方儲值頻道告訴 GM 要買的方案和遊戲帳號，照指示付款。</li><li>GM 確認收款後，把天石和禮包發到你的帳號。</li></ol></div>
+      <div class="warn"><h4>小心冒充 GM 的詐騙</h4><p>官方<b>只在官方儲值 Discord</b> 收款，GM 不會主動私訊你要你付款。任何人私訊說可以幫你儲值、便宜賣天石，都是詐騙。私下交易被騙，GM 都無法處理。查到私下買賣天石、帳號或遊戲幣換現金，相關帳號一律停權。</p></div>
     </div>
-    <div class="store-cta"><a class="btn btn-play btn-xl buy-link" href="#" target="_blank" rel="noopener">購買天石</a><a class="btn btn-ghost dc-link" href="#" target="_blank" rel="noopener">聯絡 GM</a></div>
+    <div class="official">
+      <svg class="shield" viewBox="0 0 64 64" fill="none" stroke="#a8f0dc" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><path d="M32 6 L54 14 V32 C54 46 44 55 32 59 C20 55 10 46 10 32 V14 Z"/><path d="M22 32 l7 7 13 -14" stroke-linecap="round"/></svg>
+      <div><h4>官方唯一儲值管道</h4><p>購買天石只認這個連結，請核對網址，不是這個的都不是官方。</p></div>
+      <div class="addr"><code id="buy-addr">discord.gg/N6jxp2BD</code><button class="copy" type="button" id="buy-copy">複製</button></div>
+    </div>
+    <div class="store-cta"><a class="btn btn-play btn-xl buy-link" href="#" target="_blank" rel="noopener">購買天石（官方儲值 Discord）</a></div>
+    <p style="text-align:center;color:var(--ash);font-size:13.5px;margin-top:14px">一般問題、組隊、公告請到 <a class="dc-link" href="#" target="_blank" rel="noopener">玩家社群 Discord</a>，儲值請用上方官方儲值管道。</p>
   </div>
 </section>
 
@@ -679,7 +695,8 @@ footer .bot{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,2
       <details><summary>跳出「Smart App Control 已封鎖」</summary><p>Windows 安全性 → 應用程式與瀏覽器控制 → 智慧型應用程式控制設定，改成「關閉」。私服登入器常被這個功能誤擋。</p></details>
       <details><summary>怎麼註冊帳號？</summary><p>不用另外申請。在登入畫面輸入你想要的帳號和密碼，第一次登入就會自動建立。帳號限 4–16 個英文或數字，密碼 4–16 字。如果顯示帳號或密碼錯誤，代表這個帳號已經有人用了，換一個名字再試。</p></details>
       <details><summary>按登入後卡住或連線失敗</summary><p>先到 Discord 確認伺服器有開。如果 GM 公告換了新版本，請重新下載客戶端。</p></details>
-      <details><summary>儲值多久會到？</summary><p>付款後到 Discord 私訊 GM 角色名稱和付款截圖，GM 確認後就會發放天石和禮包。</p></details>
+      <details><summary>儲值要去哪裡？怎麼確認是官方？</summary><p>儲值只在官方儲值 Discord：<b>discord.gg/N6jxp2BD</b>。玩家社群 Discord（discord.gg/DW6V3JHccs）是聊天、組隊、看公告用的。GM 不會主動私訊你要你付款，有人私訊說可以代儲、便宜賣天石，一律是詐騙。</p></details>
+      <details><summary>儲值多久會到？</summary><p>在官方儲值 Discord 付款後，GM 確認收款就會把天石和禮包發到你的帳號。</p></details>
     </div>
   </div>
 </section>
@@ -715,8 +732,8 @@ footer .bot{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,2
 // ===== 連結設定：拿到連結後貼在這裡 =====
 const LINKS = {
   download: "https://mega.nz/file/jXBiGKIJ#EQ389sCPCzMfSJj7QIFU01BSBEXYj6koPwVSmflZszA",  // 客戶端下載（MEGA）
-  discord:  "",  // Discord 邀請連結
-  buy:      "",  // 購買天石連結
+  discord:  "https://discord.gg/DW6V3JHccs",  // Discord 玩家社群
+  buy:      "https://discord.gg/N6jxp2BD",  // 官方儲值 Discord（唯一購買管道）
 };
 function wire(sel, url, pending){
   document.querySelectorAll(sel).forEach(a => {
@@ -730,6 +747,13 @@ function wire(sel, url, pending){
 wire(".dl-btn", LINKS.download, "連結準備中");
 wire(".dc-link", LINKS.discord, "Discord 準備中");
 wire(".buy-link", LINKS.buy, "購買連結準備中");
+
+// 複製官方儲值網址
+document.getElementById("buy-copy").addEventListener("click", e => {
+  const t = "https://discord.gg/N6jxp2BD", b = e.currentTarget;
+  const ok = () => { b.textContent = "已複製"; setTimeout(() => b.textContent = "複製", 1500); };
+  if (navigator.clipboard) navigator.clipboard.writeText(t).then(ok).catch(() => { const r = document.createRange(); r.selectNodeContents(document.getElementById("buy-addr")); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); });
+});
 
 // ===== 事前預約 =====
 // RESERVE_COUNT：目前預約人數（手動更新，或之後接上 Google 試算表自動讀取）
