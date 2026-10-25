@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="懷舊征服官方網站：經典 5065 版本，台港澳玩家皆可遊玩。肯花時間農，零課也追得上課金。公會戰、PK 大賽、五層錢袋、+12 精煉。">
-<meta property="og:title" content="懷舊征服 CLASSIC CONQUER">
-<meta property="og:description" content="經典 5065・台港澳皆可遊玩・零課也追得上課金・每週公會戰 11 萬天石">
+<meta name="description" content="懷舊征服官方網站：經典 5065 版本，台港澳玩家皆可遊玩。事前預約送 +7 武器，肯花時間農，零課也追得上課金。">
+<meta property="og:title" content="懷舊征服 CLASSIC CONQUER｜事前預約送 +7 武器">
+<meta property="og:description" content="經典 5065・台港澳皆可遊玩・預約人數越多送越多・零課也追得上課金">
 <meta name="theme-color" content="#06070c">
 <title>懷舊征服</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -260,6 +260,42 @@ section{position:relative;padding-block:110px}
 .legend b{display:block;color:var(--bone);font-family:var(--f-head);font-weight:900;font-size:16px}
 @media (max-width:640px){.refine{grid-template-columns:repeat(6,1fr);row-gap:12px}.legend{grid-template-columns:1fr}}
 
+/* reserve */
+.rsv{background:radial-gradient(70% 60% at 50% 0%,rgba(229,184,92,.16),transparent 70%),linear-gradient(180deg,#0e1120,var(--void))}
+.rsv-top{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.gift{display:flex;gap:22px;align-items:center}
+.gift svg{width:120px;height:auto;flex:none;filter:drop-shadow(0 0 24px rgba(255,190,90,.4))}
+.gift h3{font-family:var(--f-head);font-weight:900;font-size:clamp(28px,3.6vw,42px);line-height:1.2}
+.gift p{color:var(--ash);margin:8px 0 0}
+.counter{text-align:center;padding:28px}
+.counter .n{font-family:var(--f-latin);font-weight:900;font-size:clamp(46px,6vw,72px);line-height:1}
+.counter .l{color:var(--ash);font-size:14px;letter-spacing:.2em;margin-top:6px}
+.counter .next{margin-top:14px;font-size:14.5px}
+.counter .next b{color:var(--gold-hi)}
+.ms{position:relative;margin:64px 0 0;display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.ms::before{content:"";position:absolute;left:10%;right:10%;top:27px;height:4px;background:rgba(255,255,255,.08)}
+.ms .fill{position:absolute;left:10%;top:27px;height:4px;width:0;background:linear-gradient(90deg,var(--gold-lo),var(--gold-hi));box-shadow:0 0 12px rgba(255,200,110,.6);transition:width .8s}
+.m{position:relative;text-align:center;min-width:0}
+.m .node{width:58px;height:58px;margin:0 auto 14px;display:grid;place-items:center;font-family:var(--f-latin);font-weight:900;font-size:13px;color:var(--ash);background:var(--steel);box-shadow:inset 0 0 0 2px var(--edge);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);position:relative;z-index:1}
+.m.done .node{color:#1d1204;background:linear-gradient(180deg,var(--gold-hi),var(--gold-lo))}
+.m h4{font-family:var(--f-latin);font-weight:900;font-size:18px}
+.m.done h4{color:var(--gold-hi)}
+.m ul{list-style:none;margin:8px 0 0;padding:0;font-size:13.5px;color:var(--ash);display:grid;gap:4px}
+.m.done ul{color:var(--bone)}
+.rsv-form{margin:64px auto 0;max-width:760px;padding:30px 30px 26px}
+.rsv-form h3{font-family:var(--f-head);font-weight:900;font-size:24px;text-align:center}
+.rsv-form .hint{text-align:center;color:var(--ash);font-size:14px;margin:6px 0 20px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fld{display:flex;flex-direction:column;gap:6px;min-width:0}
+.fld label{font-size:13.5px;color:var(--gold);font-weight:700;letter-spacing:.06em}
+.fld input,.fld select{height:46px;padding:0 14px;background:rgba(0,0,0,.35);border:1px solid var(--edge-hi);color:var(--bone);font:inherit;font-size:15px;border-radius:0;width:100%}
+.fld input:focus,.fld select:focus{outline:2px solid var(--gold-hi);outline-offset:0}
+.fld small{color:var(--ash);font-size:12px}
+.rsv-form .act{display:flex;justify-content:center;margin-top:22px}
+.msg{margin-top:16px;text-align:center;font-size:14.5px;min-height:1.5em}
+.msg.ok{color:var(--jade)}.msg.err{color:#ff9d8f}
+@media (max-width:860px){.rsv-top{grid-template-columns:1fr}.ms{grid-template-columns:1fr 1fr;row-gap:28px}.ms::before,.ms .fill{display:none}.fgrid{grid-template-columns:1fr}}
+
 /* store */
 .rate{display:flex;justify-content:center;align-items:center;gap:22px;margin-bottom:44px;flex-wrap:wrap}
 .rate .c{font-family:var(--f-latin);font-weight:900;font-size:clamp(44px,6vw,72px);line-height:1;text-align:center}
@@ -348,6 +384,7 @@ footer .bot{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,2
 <nav class="nav gut">
   <div class="wrap">
     <ul class="l">
+      <li><a href="#reserve">事前預約</a></li>
       <li><a href="#news">最新消息</a></li>
       <li><a href="#features">特色</a></li>
       <li><a href="#war">公會戰</a></li>
@@ -387,8 +424,8 @@ footer .bot{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,2
     <div class="slogan">肯花時間農，<em>零課也追得上課金</em></div>
     <p class="lede">經典 5065 版本，全中文介面。天石打怪會掉、市場掛機會給、活動大把發，課金買得到的東西，花時間都拿得到。</p>
     <div class="cta">
-      <a class="btn btn-play btn-xl dl-btn" href="#" target="_blank" rel="noopener">免費下載</a>
-      <a class="btn btn-ghost dc-link" href="#" target="_blank" rel="noopener">加入 Discord</a>
+      <a class="btn btn-play btn-xl" href="#reserve">事前預約 送 +7 武器</a>
+      <a class="btn btn-ghost dl-btn" href="#" target="_blank" rel="noopener">免費下載</a>
     </div>
     <div class="note">台港澳皆可連線・Windows 10 / 11・登入畫面直接輸入新帳號密碼，自動註冊</div>
     <div class="stats">
@@ -407,6 +444,40 @@ footer .bot{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,2
     <div class="today"><span class="chip" id="ev-dexp">雙倍經驗 20:00</span><span class="chip" id="ev-pk">PK 大賽 21:00</span></div>
   </div>
 </div>
+
+<section id="reserve" class="gut rsv">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Pre-Registration</span><h2 class="metal">事前預約</h2><div class="bar"></div><p>現在預約，開服登入就送 +7 武器。預約人數越多，全體預約玩家拿到的獎勵就越多。</p></div>
+    <div class="rsv-top">
+      <div class="gift">
+        <svg viewBox="0 0 120 120" aria-hidden="true"><defs><linearGradient id="wg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe8ad"/><stop offset=".5" stop-color="#e5b85c"/><stop offset="1" stop-color="#94621c"/></linearGradient></defs>
+          <circle cx="60" cy="60" r="54" fill="none" stroke="url(#wg)" stroke-width="1.5" stroke-dasharray="3 5"/>
+          <path d="M84 18 L98 22 L102 36 L50 88 L32 70 Z" fill="url(#wg)"/><path d="M40 78 l-14 14" stroke="url(#wg)" stroke-width="8" stroke-linecap="round"/><path d="M28 64 l28 28" stroke="url(#wg)" stroke-width="6" stroke-linecap="round"/>
+          <text x="86" y="100" text-anchor="middle" font-family="Cinzel,serif" font-weight="900" font-size="24" fill="#fff3ea" stroke="#94621c" stroke-width="1">+7</text></svg>
+        <div><span class="eyebrow">Everyone Gets</span><h3>預約就送<br><span class="metal">+7 武器＋1,000 天石</span></h3><p>開服後用預約的帳號登入，GM 發放到你的角色。</p></div>
+      </div>
+      <div class="panel counter">
+        <div class="n metal num" id="rsv-n">0</div>
+        <div class="l">目前預約人數</div>
+        <div class="next" id="rsv-next"></div>
+      </div>
+    </div>
+    <div class="ms" id="rsv-ms"><div class="fill" id="rsv-fill"></div></div>
+    <form class="panel rsv-form" id="rsv-form" novalidate>
+      <h3>填寫預約</h3>
+      <p class="hint">帳號名稱就是開服後你要登入的帳號，獎勵會發到這個帳號。</p>
+      <div class="fgrid">
+        <div class="fld"><label for="rf-acc">遊戲帳號</label><input id="rf-acc" name="acc" autocomplete="username" maxlength="16" placeholder="4–16 個英文或數字"><small>開服時用這個帳號註冊登入</small></div>
+        <div class="fld"><label for="rf-contact">聯絡方式</label><input id="rf-contact" name="contact" maxlength="60" placeholder="IG、Threads、Line、Discord 或 Email"><small>開服通知用</small></div>
+        <div class="fld"><label for="rf-cls">想玩的職業</label><select id="rf-cls" name="cls"><option>勇士</option><option>戰士</option><option>弓箭手</option><option>水道士</option><option>火道士</option></select><small>決定送哪一種 +7 武器</small></div>
+        <div class="fld"><label for="rf-reg">所在地區</label><select id="rf-reg" name="reg"><option>台灣</option><option>香港</option><option>澳門</option><option>其他</option></select></div>
+        <div class="fld"><label for="rf-played">有沒有玩過征服</label><select id="rf-played" name="played"><option>有玩過</option><option>沒玩過</option></select></div>
+      </div>
+      <div class="act"><button class="btn btn-play btn-xl" type="submit" id="rf-btn">送出預約</button></div>
+      <div class="msg" id="rf-msg" role="status"></div>
+    </form>
+  </div>
+</section>
 
 <section id="news" class="gut">
   <div class="wrap">
@@ -659,6 +730,59 @@ function wire(sel, url, pending){
 wire(".dl-btn", LINKS.download, "連結準備中");
 wire(".dc-link", LINKS.discord, "Discord 準備中");
 wire(".buy-link", LINKS.buy, "購買連結準備中");
+
+// ===== 事前預約 =====
+// RESERVE_COUNT：目前預約人數（手動更新，或之後接上 Google 試算表自動讀取）
+const RESERVE_COUNT = 0;
+// GFORM：Google 表單設定。action 是表單網址把 /viewform 換成 /formResponse；entry 是各欄位的 entry 編號
+const GFORM = {
+  action: "https://docs.google.com/forms/d/e/1FAIpQLSdqDuJp4tOHC9luX2wbFJR77le8ZEYPHAtZ-xXhJYigwPGboQ/formResponse",
+  entry: { acc: "entry.966391045", contact: "entry.759149784", cls: "entry.182573424", reg: "entry.1464331231", played: "entry.777324674" },
+};
+const MILESTONES = [
+  { n: 0,   r: ["+7 本職業武器", "天石 1,000"] },
+  { n: 10,  r: ["天石 3,000", "流星 ×10"] },
+  { n: 20,  r: ["天石 4,000", "龍珠 ×3", "3 級錢袋 ×1"] },
+  { n: 50,  r: ["天石 5,000", "+6 赤鍊石 ×1"] },
+  { n: 100, r: ["+12 裝備一件", "4 級錢袋 ×1"] },
+];
+(function(){
+  const fmt = n => n.toLocaleString("en-US");
+  const ms = document.getElementById("rsv-ms");
+  MILESTONES.forEach(m => {
+    const d = document.createElement("div");
+    d.className = "m" + (RESERVE_COUNT >= m.n ? " done" : "");
+    d.innerHTML = '<div class="node">' + (RESERVE_COUNT >= m.n ? "✓" : "") + '</div><h4>' + (m.n ? fmt(m.n) + " 人" : "預約即送") + '</h4><ul>' + m.r.map(x => "<li>" + x + "</li>").join("") + '</ul>';
+    ms.appendChild(d);
+  });
+  let reached = 0; MILESTONES.forEach((m, i) => { if (RESERVE_COUNT >= m.n) reached = i; });
+  const nx = MILESTONES[reached + 1];
+  let pct = reached / (MILESTONES.length - 1);
+  if (nx) pct += (RESERVE_COUNT - MILESTONES[reached].n) / (nx.n - MILESTONES[reached].n) / (MILESTONES.length - 1);
+  document.getElementById("rsv-fill").style.width = (pct * 80) + "%";
+  document.getElementById("rsv-next").innerHTML = nx ? "再 <b>" + fmt(nx.n - RESERVE_COUNT) + "</b> 人解鎖：" + nx.r.join("、") : "<b>全部獎勵已解鎖！</b>";
+  const nEl = document.getElementById("rsv-n");
+  let cur = 0; const step = Math.max(1, Math.ceil(RESERVE_COUNT / 40));
+  (function up(){ cur = Math.min(RESERVE_COUNT, cur + step); nEl.textContent = fmt(cur); if (cur < RESERVE_COUNT) requestAnimationFrame(up); })();
+
+  const form = document.getElementById("rsv-form"), msg = document.getElementById("rf-msg"), btn = document.getElementById("rf-btn");
+  let done = false; try { done = localStorage.getItem("rsv_done") === "1"; } catch (e) {}
+  if (done) { msg.className = "msg ok"; msg.textContent = "你已經預約過了，開服時會通知你。"; }
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    const v = k => form.elements[k].value.trim();
+    if (!/^[A-Za-z0-9]{4,16}$/.test(v("acc"))) { msg.className = "msg err"; msg.textContent = "遊戲帳號要 4–16 個英文或數字。"; form.elements.acc.focus(); return; }
+    if (v("contact").length < 3) { msg.className = "msg err"; msg.textContent = "請填聯絡方式（IG、Threads、Line、Discord 或 Email），開服時才能通知你。"; form.elements.contact.focus(); return; }
+    if (!GFORM.action) { msg.className = "msg err"; msg.textContent = "預約表單還沒開放，請先加入 Discord 等候公告。"; return; }
+    const fd = new FormData();
+    Object.keys(GFORM.entry).forEach(k => { if (GFORM.entry[k]) fd.append(GFORM.entry[k], v(k)); });
+    btn.setAttribute("aria-disabled", "true"); btn.textContent = "送出中…";
+    fetch(GFORM.action, { method: "POST", mode: "no-cors", body: fd })
+      .then(() => { msg.className = "msg ok"; msg.textContent = "預約成功！開服時用「" + v("acc") + "」登入領取獎勵。"; try { localStorage.setItem("rsv_done", "1"); } catch (e) {} form.reset(); })
+      .catch(() => { msg.className = "msg err"; msg.textContent = "送出失敗，請檢查網路後再試一次。"; })
+      .finally(() => { btn.removeAttribute("aria-disabled"); btn.textContent = "送出預約"; });
+  });
+})();
 
 // ===== 零課計算 =====
 (function(){
