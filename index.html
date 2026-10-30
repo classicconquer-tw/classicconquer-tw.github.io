@@ -364,6 +364,25 @@ code{font-family:ui-monospace,Consolas,monospace;font-size:.9em;background:rgba(
 .tool small{display:block;margin-top:10px;color:var(--ash);font-size:12.5px}
 @media (max-width:860px){.tool{grid-template-columns:1fr}.tool .ico{width:64px;height:64px}}
 
+/* download dialog */
+dialog.dlg{border:0;padding:0;background:transparent;color:var(--bone);max-width:min(720px,calc(100vw - 32px));width:100%}
+dialog.dlg::backdrop{background:rgba(3,4,8,.78);backdrop-filter:blur(4px)}
+.dlg .panel{padding:32px 30px 26px}
+.dlg h3{font-family:var(--f-head);font-weight:900;font-size:28px;text-align:center;color:var(--bone);letter-spacing:0}
+.dlg .sub{text-align:center;color:var(--ash);font-size:14px;margin:6px 0 22px}
+.dl-item{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;padding:18px 20px;background:rgba(0,0,0,.28);box-shadow:inset 0 0 0 1px var(--edge)}
+.dl-item+.dl-item{margin-top:12px}
+.dl-item .no{font-family:var(--f-latin);font-weight:900;font-size:30px;color:transparent;-webkit-text-stroke:1px var(--gold)}
+.dl-item h4{font-family:var(--f-head);font-weight:900;font-size:19px}
+.dl-item p{margin:3px 0 0;color:var(--ash);font-size:13.5px}
+.dl-item .tagx{display:inline-block;margin-left:8px;font-family:var(--f-body);font-size:11.5px;font-weight:700;padding:1px 8px;vertical-align:middle;color:#1d1204;background:var(--gold)}
+.dl-item .tagx.opt{background:var(--jade);color:#06231c}
+.dlg .foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px;flex-wrap:wrap;font-size:13.5px;color:var(--ash)}
+.dlg .x{all:unset;cursor:pointer;position:absolute;top:12px;right:16px;font-size:26px;line-height:1;color:var(--ash)}
+.dlg .x:hover{color:var(--gold-hi)}
+.dlg .x:focus-visible{outline:2px solid var(--gold-hi)}
+@media (max-width:600px){.dl-item{grid-template-columns:1fr}.dl-item .no{display:none}}
+
 /* faq */
 .faq{max-width:840px;margin:0 auto;display:grid;gap:10px}
 details{background:var(--steel);box-shadow:inset 0 0 0 1px var(--edge);padding:0 24px}
@@ -414,7 +433,7 @@ footer .bot{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,2
     <a class="brand" href="#top"><b class="metal">懷舊征服</b><small>CLASSIC CONQUER</small></a>
     <div class="right">
       <a class="icon-btn dc-link" href="#" target="_blank" rel="noopener" aria-label="Discord"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.3 5.3A16.6 16.6 0 0 0 15.2 4l-.5 1a15.3 15.3 0 0 0-5.4 0l-.5-1a16.5 16.5 0 0 0-4.1 1.3C2.1 9.2 1.4 13 1.7 16.7a16.8 16.8 0 0 0 5 2.5l1.1-1.7a10.8 10.8 0 0 1-1.7-.8l.4-.3a11.9 11.9 0 0 0 11 0l.4.3c-.5.3-1.1.6-1.7.8l1.1 1.7a16.7 16.7 0 0 0 5-2.5c.4-4.3-.7-8-3-11.4ZM8.5 14.5c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm7 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/></svg></a>
-      <a class="btn btn-play btn-sm" href="#download">免費下載</a>
+      <a class="btn btn-play btn-sm dl-btn" href="#download">免費下載</a>
     </div>
   </div>
 </nav>
@@ -711,7 +730,7 @@ footer .bot{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,2
         </ol>
         <small>Windows 跳出「已保護您的電腦」時，按「其他資訊」→「仍要執行」。</small>
       </div>
-      <a class="btn btn-play" href="https://mega.nz/file/fX5gWTaT#kkqryoJG0SPswxpajXDOSmJTNiUYYYTiO2xhYgeTBxA" target="_blank" rel="noopener">下載小幫手</a>
+      <a class="btn btn-play dl-helper" href="#" target="_blank" rel="noopener">下載小幫手</a>
     </div>
   </div>
 </section>
@@ -742,6 +761,25 @@ footer .bot{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,2
   </div>
 </footer>
 
+<dialog class="dlg" id="dlg" aria-labelledby="dlg-t">
+  <div class="panel">
+    <button class="x" type="button" id="dlg-x" aria-label="關閉">×</button>
+    <h3 id="dlg-t">下載遊戲</h3>
+    <p class="sub">兩個都下載最方便。主程式解壓縮到 C 槽，小幫手放進遊戲資料夾。</p>
+    <div class="dl-item">
+      <div class="no">01</div>
+      <div><h4>遊戲主程式<span class="tagx">必裝</span></h4><p>完整客戶端・463 MB・MEGA 下載</p></div>
+      <a class="btn btn-play dl-main" href="#" target="_blank" rel="noopener">下載主程式</a>
+    </div>
+    <div class="dl-item">
+      <div class="no">02</div>
+      <div><h4>打字小幫手<span class="tagx opt">推薦</span></h4><p>遊戲裡打不出注音時用・在小視窗打字自動貼進遊戲</p></div>
+      <a class="btn btn-ghost dl-helper" href="#" target="_blank" rel="noopener">下載小幫手</a>
+    </div>
+    <div class="foot"><span>第一次安裝？看 <a href="#download" id="dlg-guide">安裝教學</a></span><span>Windows 10 / 11</span></div>
+  </div>
+</dialog>
+
 <div class="mbar"><a class="btn btn-play dl-btn" href="#" target="_blank" rel="noopener">免費下載</a><a class="btn btn-ghost dc-link" href="#" target="_blank" rel="noopener">Discord</a></div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -761,7 +799,8 @@ footer .bot{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,2
 <script>
 // ===== 連結設定：拿到連結後貼在這裡 =====
 const LINKS = {
-  download: "https://mega.nz/file/jXBiGKIJ#EQ389sCPCzMfSJj7QIFU01BSBEXYj6koPwVSmflZszA",  // 客戶端下載（MEGA）
+  download: "https://mega.nz/file/jXBiGKIJ#EQ389sCPCzMfSJj7QIFU01BSBEXYj6koPwVSmflZszA",  // 遊戲主程式（MEGA）
+  helper:   "https://mega.nz/file/fX5gWTaT#kkqryoJG0SPswxpajXDOSmJTNiUYYYTiO2xhYgeTBxA",  // 打字小幫手（MEGA）
   discord:  "https://discord.gg/DW6V3JHccs",  // Discord 玩家社群
   buy:      "https://discord.gg/N6jxp2BD",  // 官方儲值 Discord（唯一購買管道）
 };
@@ -774,7 +813,19 @@ function wire(sel, url, pending){
     else { a.style.opacity = ".5"; a.title = pending; }
   });
 }
-wire(".dl-btn", LINKS.download, "連結準備中");
+wire(".dl-main", LINKS.download, "連結準備中");
+wire(".dl-helper", LINKS.helper, "連結準備中");
+// 所有「免費下載」按鈕 → 打開下載視窗（主程式＋打字小幫手）
+(function(){
+  const d = document.getElementById("dlg");
+  document.querySelectorAll(".dl-btn").forEach(a => {
+    a.removeAttribute("target");
+    a.addEventListener("click", e => { e.preventDefault(); if (d.showModal) d.showModal(); else location.hash = "download"; });
+  });
+  document.getElementById("dlg-x").addEventListener("click", () => d.close());
+  document.getElementById("dlg-guide").addEventListener("click", () => d.close());
+  d.addEventListener("click", e => { if (e.target === d) d.close(); });
+})();
 wire(".dc-link", LINKS.discord, "Discord 準備中");
 wire(".buy-link", LINKS.buy, "購買連結準備中");
 
