@@ -354,6 +354,16 @@ section{position:relative;padding-block:110px}
 code{font-family:ui-monospace,Consolas,monospace;font-size:.9em;background:rgba(229,184,92,.14);color:var(--gold-hi);padding:1px 6px;word-break:break-all}
 @media (max-width:900px){.dl .wrap{grid-template-columns:1fr}}
 
+/* tools */
+.tool{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;padding:30px}
+.tool .ico{width:84px;height:84px;display:grid;place-items:center;background:linear-gradient(180deg,var(--gold-hi),var(--gold-lo));clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.tool .ico svg{width:40px;height:40px}
+.tool h3{font-family:var(--f-head);font-weight:900;font-size:24px}
+.tool p{margin:6px 0 0;color:var(--ash);font-size:14.5px}
+.tool ol{margin:12px 0 0;padding-left:1.3em;color:var(--bone);font-size:14.5px;display:grid;gap:4px}
+.tool small{display:block;margin-top:10px;color:var(--ash);font-size:12.5px}
+@media (max-width:860px){.tool{grid-template-columns:1fr}.tool .ico{width:64px;height:64px}}
+
 /* faq */
 .faq{max-width:840px;margin:0 auto;display:grid;gap:10px}
 details{background:var(--steel);box-shadow:inset 0 0 0 1px var(--edge);padding:0 24px}
@@ -686,12 +696,32 @@ footer .bot{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,2
   </div>
 </section>
 
+<section id="tools" class="gut" style="padding-top:60px">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Player Tools</span><h2 class="metal">玩家工具</h2><div class="bar"></div></div>
+    <div class="panel tool">
+      <div class="ico"><svg viewBox="0 0 40 40" fill="none" stroke="#1d1204" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="32" height="20" rx="3"/><path d="M10 16h2M16 16h2M22 16h2M28 16h2M12 23h16"/></svg></div>
+      <div>
+        <h3>打字小幫手</h3>
+        <p>遊戲裡打不出注音？在小幫手裡用任何輸入法打字，按 Enter 自動貼進遊戲送出。</p>
+        <ol>
+          <li>下載解壓縮，建議放進遊戲資料夾。</li>
+          <li>開遊戲，先點一下遊戲聊天框。</li>
+          <li>雙擊 <code>ChatInput.bat</code>，在下方小視窗打字，按 Enter 送出。</li>
+        </ol>
+        <small>Windows 跳出「已保護您的電腦」時，按「其他資訊」→「仍要執行」。</small>
+      </div>
+      <a class="btn btn-play" href="https://mega.nz/file/fX5gWTaT#kkqryoJG0SPswxpajXDOSmJTNiUYYYTiO2xhYgeTBxA" target="_blank" rel="noopener">下載小幫手</a>
+    </div>
+  </div>
+</section>
+
 <section id="faq" class="gut">
   <div class="wrap">
     <div class="head"><span class="eyebrow">FAQ</span><h2 class="metal">常見問題</h2><div class="bar"></div></div>
     <div class="faq">
       <details><summary>畫面上的中文變成亂碼</summary><p>Windows 的「非 Unicode 程式語言」不是繁體中文。照安裝第 2 步改成「中文（繁體，台灣）」並重新開機。</p></details>
-      <details><summary>遊戲裡打不出中文</summary><ol><li>設定 → 時間與語言 → 語言與地區 → 中文（繁體）→ 語言選項 → 微軟注音 → 一般</li><li>打開「使用舊版的微軟注音」</li><li>重開遊戲</li></ol></details>
+      <details><summary>遊戲裡打不出中文</summary><p>最簡單的方法：下載上方「玩家工具」的<b>打字小幫手</b>，在小視窗打字自動貼進遊戲。或照下面的步驟改用舊版注音：</p><ol><li>設定 → 時間與語言 → 語言與地區 → 中文（繁體）→ 語言選項 → 微軟注音 → 一般</li><li>打開「使用舊版的微軟注音」</li><li>重開遊戲</li></ol></details>
       <details><summary>跳出「Smart App Control 已封鎖」</summary><p>Windows 安全性 → 應用程式與瀏覽器控制 → 智慧型應用程式控制設定，改成「關閉」。私服登入器常被這個功能誤擋。</p></details>
       <details><summary>怎麼註冊帳號？</summary><p>不用另外申請。在登入畫面輸入你想要的帳號和密碼，第一次登入就會自動建立。帳號限 4–16 個英文或數字，密碼 4–16 字。如果顯示帳號或密碼錯誤，代表這個帳號已經有人用了，換一個名字再試。</p></details>
       <details><summary>按登入後卡住或連線失敗</summary><p>先到 Discord 確認伺服器有開。如果 GM 公告換了新版本，請重新下載客戶端。</p></details>
